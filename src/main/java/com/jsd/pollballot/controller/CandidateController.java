@@ -23,7 +23,7 @@ public class CandidateController {
 
     @PostMapping("/castvote")
     public String castVote(@RequestParam String name) {
-        boolean success = candidateService.castVote(name);
+        boolean success = (boolean) candidateService.castVote(name);
         return success ? "Vote casted successfully." : "Candidate not found.";
     }
 

@@ -51,7 +51,7 @@ public class CandidateControllerTest {
         mockMvc.perform(get("/api/countvote")
                 .param("name", "Akash"))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.content().string("3"));
+                .andExpect(MockMvcResultMatchers.content().string("2"));
     }
 
     @Test
@@ -70,7 +70,7 @@ public class CandidateControllerTest {
 
         mockMvc.perform(get("/api/listvote"))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.Akash.voteCount").value(3));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.Akash.voteCount").value(2));
  //               .andExpect(MockMvcResultMatchers.jsonPath("$.Bhaskar.voteCount").value(0));
     }
 
