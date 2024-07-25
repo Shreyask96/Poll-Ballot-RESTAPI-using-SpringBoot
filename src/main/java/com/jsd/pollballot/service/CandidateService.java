@@ -14,6 +14,15 @@ public class CandidateService {
 		candidates.putIfAbsent(name, new Candidate(name));
 	}
 
+//    public String incrementVote(String name) {
+//        if (!candidates.containsKey(name)) {
+//            return "Candidate not found";
+//        }
+//        candidates.computeIfPresent(name, (k, v) -> v);
+//        return "Vote cast successfully";
+//    }
+	
+	
 	public boolean castVote(String name) {
 		Candidate candidate = candidates.get(name);
 		if (candidate != null) {
