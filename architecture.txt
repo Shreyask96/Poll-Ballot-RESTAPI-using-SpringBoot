@@ -1,0 +1,8 @@
+Architecture and Design
+
+The application is built using Spring Boot and follows a simple REST architecture.
+
+## Components
+- `Candidate`: Represents a candidate with a name and vote count.
+- `VotingService`: Contains the business logic for managing candidates and votes.
+- `VotingController`: Exposes the API endpoints.
