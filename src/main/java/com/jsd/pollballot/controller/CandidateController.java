@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import com.jsd.pollballot.dto.Candidate;
 import com.jsd.pollballot.service.CandidateService;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -23,7 +24,7 @@ public class CandidateController {
 
     @PostMapping("/castvote")
     public String castVote(@RequestParam String name) {
-        boolean success = (boolean) candidateService.castVote(name);
+        boolean success = candidateService.castVote(name);
         return success ? "Vote casted successfully." : "Candidate not found.";
     }
 
@@ -34,7 +35,7 @@ public class CandidateController {
     }
 
     @GetMapping("/listvote")
-    public Map<String, Candidate> listVote() {
+    public List<Candidate> listVote() {
         return candidateService.getAllCandidates();
     }
 

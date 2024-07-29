@@ -46,6 +46,8 @@ public class Candidate {
         return voteCount;
     }
 
+    public Candidate() {}
+    
     public void incrementVoteCount() {
         this.voteCount++;
     }
